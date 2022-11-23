@@ -3,21 +3,21 @@ const circles = document.querySelectorAll('.circle');
 let activeLight = 0;
 let delay = 5000;
 
-let govno = () => {
+let svetofor = () => {
     setTimeout(() => {
         changeLight();
         if (activeLight === 1) {
           delay = 1000;
-          clearTimeout(govno);
-          govno = setTimeout(() => {
+          clearTimeout(svetofor);
+          svetofor = setTimeout(() => {
             changeLight();
             if (activeLight === 2) {
-              clearTimeout(govno)
+              clearTimeout(svetofor)
               delay = 4000;
-              govno = setTimeout(() => {
+              svetofor = setTimeout(() => {
                   changeLight()
                   if(activeLight === 0){
-                      clearTimeout(govno)
+                      clearTimeout(svetofor)
                       delay = 5000
                   }
               },delay)
@@ -26,8 +26,8 @@ let govno = () => {
         }
       }, delay);
 }
-govno()
-setInterval(govno,10000)
+svetofor()
+setInterval(svetofor,10000)
 function changeLight() {
   circles[activeLight].className = 'circle';
   activeLight++;
